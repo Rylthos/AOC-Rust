@@ -24,10 +24,14 @@
             cargo
             rustc
             rust
+
+            z3.dev
         ];
 
-        buildInputs = with pkgs; [
-        ];
+        LIBCLANG_PATH = "${pkgs.llvmPackages.libclang.lib}/lib";
+
+        Z3_SYS_Z3_HEADER = "${pkgs.z3.dev}/include/z3.h";
+        Z3_SYS_Z3_LIB_DIR = "${pkgs.z3.dev}/lib";
       };
     };
 }
